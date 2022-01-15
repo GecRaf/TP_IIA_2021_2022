@@ -10,7 +10,7 @@
 
 int main() {
     char nome_ficheiro[100];
-    int numero_iteracoes = 0, nvertices = 0;
+    int numero_iteracoes = 0, nvertices = 0, narestas = 0;
     int *matriz, *solucao, *melhorSolucao, custo, runs = DEFAULT_RUNS, melhorCusto = 0;
     float mbf = 0.0;
 
@@ -18,7 +18,7 @@ int main() {
     gets(nome_ficheiro);
     printf("\n");
 
-    lerFicheiro(nome_ficheiro);
+    lerFicheiro(nome_ficheiro, nvertices, narestas);
 
 //=================== TREPA COLINAS =======================================
   /*  int i;
