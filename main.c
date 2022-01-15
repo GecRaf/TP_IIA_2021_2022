@@ -2,9 +2,9 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include ".\utils.h"
-#include ".\funcao.h"
-#include ".\algoritmo.h"
+#include "utils.h"
+#include "funcao.h"
+#include "algoritmo.h"
 
 #define DEFAULT_RUNS 10
 
@@ -18,8 +18,10 @@ int main() {
     gets(nome_ficheiro);
     printf("\n");
 
+    lerFicheiro(nome_ficheiro);
+
 //=================== TREPA COLINAS =======================================
-    int i;
+  /*  int i;
 
     matriz = setMatriz(nome_ficheiro, &nvertices, &numero_iteracoes);
 
@@ -57,6 +59,6 @@ int main() {
     free(matriz);
     free(solucao);
     free(melhorSolucao);
-
+*/
     return 1;
 }
