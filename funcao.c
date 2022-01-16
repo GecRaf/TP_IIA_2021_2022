@@ -8,10 +8,10 @@
 int* lerFicheiro(char *nomeFicheiro, int numeroVertices, int numeroArestas)
 {
     FILE *f;
-    int col = 2, temp = 0;
+    int col = 2, temp = 0, *grafo;
     char fl[MAX];
     char line[MAX] = {};
-    int (*grafo)[numeroArestas][col];
+   
 
     f= fopen(nomeFicheiro,"r");
     if(!f)
@@ -30,7 +30,12 @@ int* lerFicheiro(char *nomeFicheiro, int numeroVertices, int numeroArestas)
             
             sscanf(line,"p edge %d %d", &numeroVertices, &numeroArestas);
             printf("%d %d", numeroVertices, numeroArestas);
-            int *grafo = malloc(col * numeroArestas * sizeof(int));
+            int (*grafo)[numeroArestas][col] = malloc(col * numeroArestas * sizeof(int));
+            if(!grafo)
+	        {
+	         printf("Erro na alocacao de memoria\n");
+	         exit(1);
+	        }
             printf("%d", grafo[0]);
         }
         else if( strcmp(fl,"e") == 0){
